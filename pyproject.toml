@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "whoami-bot"
+version = "0.1.0"
+description = "Application for presenting personal skills with AI chat bot answering based on knowledge base."
+authors = ["funnypig Illia A."]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.115.12"
+uvicorn = "^0.34.0"
+pydantic = "^2.11.1"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.5"
+ruff = "^0.11.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+whoami_bot = "whoami_bot.cli:main"
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+lint.extend-select = ["I", "E", "F"]  # imports, errors, pyflakes
+exclude = ["__init__.py"]
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "space"
